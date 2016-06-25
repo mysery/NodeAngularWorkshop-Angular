@@ -67,3 +67,11 @@ export const tracks = [{
     trackNumber: 1,
     commentsCount: 3
 }];
+
+export const comments = [{
+    id: "8297950d-86b2-47b3-8969-00c17e97d561",
+    text: "comment 1"
+},{
+    id: "8297950d-86b2-47b3-8969-00c17e97d562",
+    text: "comment 2"
+}];
