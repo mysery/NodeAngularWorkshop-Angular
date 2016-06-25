@@ -17,13 +17,13 @@ export class ApiService {
     	return this.http({method: 'GET', url: `${this.url}bands`}).then(response => response.data);
     }
 
-    getAlbums(bandId) {
-    	console.log("llamada a get albums de banda " + bandId); 
+    getAlbums(params) {
+    	console.log("llamada a get albums de banda " , params); 
     	return new Promise(resolve => resolve(albums));
     }
 
-    getArtists(bandId) {
-    	console.log("llamada a get artistsde banda " + bandId);
+    getArtists(params) {
+    	console.log("llamada a get artistsde banda " , params);
     	return new Promise(resolve => resolve(artists));
     }
 

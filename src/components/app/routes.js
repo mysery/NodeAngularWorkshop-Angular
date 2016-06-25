@@ -18,20 +18,20 @@ export function routes($routeProvider, $locationProvider) {
         .when('/band/:bandId/', {
             templateUrl: '/components/app/views/band-detail.html',
             resolve: {
-                artists: (ApiService) => ApiService.getArtists(),
-                albums: (ApiService, $routeParams) => ApiService.getAlbums($routeParams.bandId)
+                artists: (ApiService, $route) => ApiService.getArtists($route.current.params.bandId),
+                albums: (ApiService, $route) => ApiService.getAlbums($route.current.params.bandId)
             },
         })
         .when('/band/:bandId/album/:albumId/', {
             templateUrl: '/components/app/views/band-detail.html',
             resolve: {
-                tracks: (ApiService, $routeParams) => ApiService.getTracks($routeParams.albumId)
+                tracks: (ApiService, $route) => ApiService.getTracks($route.current.params.albumId)
             },
         })
         .when('/band/:bandId/album/:albumId/track/:trackId/', {
             templateUrl: '/components/app/views/band-detail.html',
             resolve: {
-                comments: (ApiService, $routeParams) => new ApiService.getComments($routeParams.trackId)
+                comments: (ApiService, $route) => new ApiService.getComments($route.current.params.trackId)
             },
         });
 }
