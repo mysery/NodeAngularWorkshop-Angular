@@ -3,7 +3,7 @@
         <tr>
         <td ng-repeat="item in $ctrl.data track by item.id">
             <a href="#">
-                <img src=""/><br/>
+                <img src="{{item.url}}" width=128/><br/>
                 {{item.name}}
             </a>
         </td>
