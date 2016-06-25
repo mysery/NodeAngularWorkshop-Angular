@@ -16,7 +16,7 @@ export function routes($routeProvider, $locationProvider) {
         .when('/', {
             templateUrl: '/components/app/views/index.html',
             resolve: {
-                // use resolve to to pass data to the template under $resolve
+                //TODO usar ApiService aca
                 data: () => new Promise(resolve => resolve(bands)), // mock data
             },
         })
