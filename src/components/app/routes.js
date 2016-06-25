@@ -19,30 +19,26 @@ export function routes($routeProvider, $locationProvider) {
         .when('/', {
             templateUrl: '/components/app/views/index.html',
             resolve: {
-                // use resolve to to pass data to the template under $resolve
-                data: () => new ApiService().getBands(), // mock data
+                data: (ApiService) => ApiService.getBands()
             },
         })
         .when('/band/:bandId/', {
             templateUrl: '/components/app/views/band-detail.html',
             resolve: {
-                // use resolve to to pass data to the template under $resolve
-                artists: () => new Promise(resolve => resolve(artists)),
-                albums: () => new Promise(resolve => resolve(albums))
+                artists: (ApiService, $routeParams) => ApiService.getArtists($routeParams.bandId),
+                albums: (ApiService, $routeParams) => ApiService.getAlbums($routeParams.bandId)
             },
         })
         .when('/band/:bandId/album/:albumId/', {
             templateUrl: '/components/app/views/band-detail.html',
             resolve: {
-                tracks: () => new Promise(resolve => resolve(tracks))
-                // use resolve to to pass data to the template under $resolve
+                tracks: (ApiService, $routeParams) => ApiService.getTracks($routeParams.albumId)
             },
         })
         .when('/band/:bandId/album/:albumId/track/:trackId/', {
             templateUrl: '/components/app/views/band-detail.html',
             resolve: {
-                comments: () => new Prom
-                // use resolve to to pass data to the template under $resolve
+                comments: (ApiService, $routeParams) => new ApiService.getComments($routeParams.trackId)
             },
         });
 }
