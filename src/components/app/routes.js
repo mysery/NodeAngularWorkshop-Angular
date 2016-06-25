@@ -1,12 +1,5 @@
 import 'angular-route';
 
-import {bands} from './services/mock-data';
-import {artists} from './services/mock-data';
-import {albums} from './services/mock-data';
-import {tracks} from './services/mock-data';
-import {ApiService} from './services/api';
-
-
 export function routes($routeProvider, $locationProvider) {
     $locationProvider.html5Mode({
         enabled: true,
@@ -25,7 +18,7 @@ export function routes($routeProvider, $locationProvider) {
         .when('/band/:bandId/', {
             templateUrl: '/components/app/views/band-detail.html',
             resolve: {
-                artists: (ApiService, $routeParams) => ApiService.getArtists($routeParams.bandId),
+                artists: (ApiService) => ApiService.getArtists(),
                 albums: (ApiService, $routeParams) => ApiService.getAlbums($routeParams.bandId)
             },
         })
