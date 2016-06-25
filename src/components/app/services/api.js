@@ -5,16 +5,16 @@ import {tracks} from './mock-data';
 import {comments} from './mock-data';
 
 export class ApiService {
-    url = 'http://localhost:1337/';
+    url = 'http://localhost:1338/';
 
-    constructor ($http, $routeParams) {
+    constructor ($http) {
         this.http = $http;
-        this.routeParams = $routeParams;
     }
 
     getBands() {
-    	console.log("llamada a get bands");
-    	return new Promise(resolve => resolve(bands));
+        console.log("llamada a get bands");
+        //return new Promise(resolve => resolve(bands));
+    	return this.http({method: 'GET', url: `${this.url}bands`}).then(response => response.data);
     }
 
     getAlbums(bandId) {
