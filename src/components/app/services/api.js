@@ -24,7 +24,7 @@ export class ApiService {
     }
 
     getArtists(bandId) {
-    	console.log("llamada a get artistsde banda " + bandId);
+    	console.log("llamada a get artists de banda " , bandId);
     	return new Promise(resolve => resolve(artists));
         //return this.http({method: 'GET', url: `${this.url}bands/${bandId}`}).then(response => response.data.artists);
     }
