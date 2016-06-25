@@ -1,7 +1,7 @@
 import {bands} from './mock-data';
 
 export class ApiService {
-    url = 'http://localhost:1337/';
+    url = 'http://localhost:1338/';
 
 
     constructor ($http) {
