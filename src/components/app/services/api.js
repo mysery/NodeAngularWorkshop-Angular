@@ -25,7 +25,13 @@ export class ApiService {
 
     getArtists(bandId) {
     	console.log("llamada a get artists de banda " , bandId);
-    	return new Promise(resolve => resolve(artists));
+    	let rv = new Promise(resolve => resolve(artists))
+            .then(artists => artists.map(artist => {
+                artist.name = `${artist.firstName} ${artist.lastName}`;
+                console.log(artist.name);
+                return artist;
+            }));
+        return rv;
         //return this.http({method: 'GET', url: `${this.url}bands/${bandId}`}).then(response => response.data.artists);
     }
 
