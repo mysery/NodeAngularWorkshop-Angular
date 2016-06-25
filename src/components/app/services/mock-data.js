@@ -1,19 +1,19 @@
 export const bands = [{
-    id: "621b363e-0a81-472b-9fdf-b16f8cc9fd41",
+    _id: "621b363e-0a81-472b-9fdf-b16f8cc9fd41",
     name: "The Beatlesa",
     docType: "band",
     foundationDate: "17/05/2016",
     active: false,
     endDate: "17/05/2016",
 },{
-    id: "621b363e-0a81-472b-9fdf-b16f8cc9fd42",
+    _id: "621b363e-0a81-472b-9fdf-b16f8cc9fd42",
     name: "The Beatlesb",
     docType: "band",
     foundationDate: "17/05/2016",
     active: false,
     endDate: "17/05/2016",
 },{
-    id: "621b363e-0a81-472b-9fdf-b16f8cc9fd43",
+    _id: "621b363e-0a81-472b-9fdf-b16f8cc9fd43",
     name: "The Beatlesc",
     docType: "band",
     foundationDate: "17/05/2016",

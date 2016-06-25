@@ -5,11 +5,12 @@ export class ApiService {
 
     constructor ($http) {
         this.http = $http;
-    }
 
+    }
     getBands() {
-    	console.log("llamada a get bands");
-    	return new Promise(resolve => resolve(bands));
+        console.log("llamada a get bands");
+        //return new Promise(resolve => resolve(bands));
+    	return this.http({method: 'GET', url: `${this.url}bands`}).then(response => response.data);
     }
 
     getAlbums(bandId) {
